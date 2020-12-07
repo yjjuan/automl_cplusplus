@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kevin-core/Desktop/ubuntu_one/move_counting_app/C++/limbo/exp/myExp2_move_opt/MoveCounter.cpp
+MoveCounter.hpp
+/home/kevin-core/Desktop/ubuntu_one/move_counting_app/C++/limbo/exp/myExp2_move_opt/MoveCounter.hpp
+MoveTimer.hpp
+/home/kevin-core/Desktop/ubuntu_one/move_counting_app/C++/limbo/exp/myExp2_move_opt/MoveTimer.hpp
+iostream
+-
+vector
+-
+
+/home/kevin-core/Desktop/ubuntu_one/move_counting_app/C++/limbo/exp/myExp2_move_opt/MoveCounter.hpp
+numeric
+-
+cmath
+-
+algorithm
+-
+vector
+-
+
+/home/kevin-core/Desktop/ubuntu_one/move_counting_app/C++/limbo/exp/myExp2_move_opt/MoveTimer.hpp
+vector
+-
+cmath
+-
+numeric
+-
+algorithm
+-
+
