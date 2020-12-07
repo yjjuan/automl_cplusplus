@@ -10,7 +10,6 @@
 
 
 using namespace limbo;
-using namespace cv;
 using namespace std;
 
 struct data{
@@ -37,11 +36,11 @@ int CountInstances(string fileName) {
     return numInstances;
 }
 
-std::vector<netFlow> LoadData(string fileName) {
+std::vector<data> LoadData(string fileName) {
     fstream handler;
     handler.open(fileName);
     int datasetSize = CountInstances(fileName);
-    std::vector<netFlow> X;
+    std::vector<data> X;
 
     for (int i = 0; i < datasetSize; i++) {
         string line;
@@ -52,7 +51,7 @@ std::vector<netFlow> LoadData(string fileName) {
         if (line != "") {
             getline(linestream, dataPortion, ',');
             float _t = stof(dataPortion);
-            getline(linestream, dataPortion, ',');
+            getline(linestream, dataPortion, ' ');
             float _x = stof(dataPortion);
 
 
@@ -74,32 +73,26 @@ double countLoss(MoveCounter& mc, double groundTruth)
     double loss;
 
     // Read csv data
-    std::vector<netFlow> flow = LoadData("../../../../../training_set1.csv");
+    std::vector<data> input = LoadData("../../../../training_set1.csv");
+    std::cout << "Finish reading data!" << std::endl;
 
     int status;
     // Start measuring time
-    auto prevTime = std::chrono::high_resolution_clock::now();
-    auto end =  std::chrono::high_resolution_clock::now();
-    auto elapsed =  std::chrono::duration_cast<std::chrono::nanoseconds>(end - prevTime);
-    for (int i =0; i < flow.size(); i++){    
+
+    for (int i =0; i < input.size(); i++){    
 
 
         // Update memoryWindow
         memoryWindow.erase(memoryWindow.begin());
-        memoryWindow.push_back(flow[i].x);
+        memoryWindow.push_back(input[i].x);
 
         // Make inference
         status = mc.update(calculateMean(memoryWindow));
 
-        end = std::chrono::high_resolution_clock::now();
-        elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - prevTime);
-        //mt.setFps(1/(elapsed.count() * 1e-9));
-        prevTime = std::chrono::high_resolution_clock::now();
 
     };
-    //std::cout << "# of move detect = " << mc.cyclesCount << std::endl;
+    std::cout << "# of move detect = " << mc.cyclesCount << std::endl;
     loss = std::abs(mc.cyclesCount - groundTruth);
-    //loss = std::abs((100 - groundTruth));
     return loss;
 }
 
@@ -134,13 +127,13 @@ struct Params {
 
     // we use 10 random samples to initialize the algorithm
     struct init_randomsampling {
-        BO_PARAM(int, samples, 20);
+        BO_PARAM(int, samples, 10);
     };
     struct opt_rprop : public defaults::opt_rprop {
     };
-    // we stop after 40 iterations
+    // we stop after  iterations
     struct stop_maxiterations {
-        BO_PARAM(int, iterations, 150);
+        BO_PARAM(int, iterations, 30);
     };
 
     // we use the default parameters for acqui_ucb
@@ -162,7 +155,7 @@ struct Eval {
     {
         std::cout << "====================================" << std::endl;
         
-        MoveCounter mc(120*x(2), 5*x(0), x(1), 30);
+        MoveCounter mc(1 + static_cast<int>(120*x(2)), 5*x(0), x(1), 30);
         std::cout << "lag = " << 1 + static_cast<int>(120)<< "; threshold = " << 5*x(0) << "; influence = " << x(1)<< std::endl;
 
         //MoveTimer mt(1 + static_cast<int>(120*x(2)), 10*x(0), x(1), 30);
@@ -170,7 +163,7 @@ struct Eval {
         double gt = 10.0;  // ground truth
         double y = -1*countLoss(mc, gt);
         //double y = -1*timeLoss(mt);
-        //std::cout << "Total burning time(sec) = " << mt.regionTotalTime<< std::endl;
+        std::cout << "Detected peaks = " << mc.cyclesCount<< std::endl;
         return tools::make_vector(y);
     }
 };

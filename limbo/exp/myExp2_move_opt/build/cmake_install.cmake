@@ -1,4 +1,4 @@
-# Install script for directory: /home/kevin-core/Desktop/ubuntu_one/move_counting_app/C++/limbo/exp/myExp2_move_opt
+# Install script for directory: /home/kevin-core/Desktop/ubuntu_one/automl_cplusplus/limbo/exp/myExp2_move_opt
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/kevin-core/Desktop/ubuntu_one/move_counting_app/C++/limbo/exp/myExp2_move_opt/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/kevin-core/Desktop/ubuntu_one/automl_cplusplus/limbo/exp/myExp2_move_opt/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

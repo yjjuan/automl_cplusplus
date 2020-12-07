@@ -4,6 +4,23 @@
 #include <algorithm>
 #include <vector>
 
+float calculateMean(const std::vector<float>& v){
+    // source; https://stackoverflow.com/questions/7616511/calculate-mean-and-standard-deviation-from-a-vector-of-samples-in-c-using-boos/12405793#12405793
+    float sum = std::accumulate(std::begin(v), std::end(v), 0.0);
+    return  sum / v.size();
+};
+
+float calculateStd(const std::vector<float>& v){
+    // source: https://stackoverflow.com/questions/7616511/calculate-mean-and-standard-deviation-from-a-vector-of-samples-in-c-using-boos/12405793#12405793
+    float accum = 0.0;
+    float mean = calculateMean(v);
+    std::for_each (std::begin(v), std::end(v), [&](const double d) {
+        accum += (d - mean) * (d - mean);
+    });
+
+    return sqrt(accum / (v.size()-1));
+};
+
 class MoveCounter  
 {
 	private:

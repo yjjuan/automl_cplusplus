@@ -48,10 +48,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kevin-core/Desktop/ubuntu_one/move_counting_app/C++/limbo/exp/myExp2_move_opt
+CMAKE_SOURCE_DIR = /home/kevin-core/Desktop/ubuntu_one/automl_cplusplus/limbo/exp/myExp2_move_opt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kevin-core/Desktop/ubuntu_one/move_counting_app/C++/limbo/exp/myExp2_move_opt/build
+CMAKE_BINARY_DIR = /home/kevin-core/Desktop/ubuntu_one/automl_cplusplus/limbo/exp/myExp2_move_opt/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kevin-core/Desktop/ubuntu_one/move_counting_app/C++/limbo/exp/myExp2_move_opt/build/CMakeFiles /home/kevin-core/Desktop/ubuntu_one/move_counting_app/C++/limbo/exp/myExp2_move_opt/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kevin-core/Desktop/ubuntu_one/automl_cplusplus/limbo/exp/myExp2_move_opt/build/CMakeFiles /home/kevin-core/Desktop/ubuntu_one/automl_cplusplus/limbo/exp/myExp2_move_opt/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kevin-core/Desktop/ubuntu_one/move_counting_app/C++/limbo/exp/myExp2_move_opt/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kevin-core/Desktop/ubuntu_one/automl_cplusplus/limbo/exp/myExp2_move_opt/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,32 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main_timer2
-
-# Build rule for target.
-main_timer2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main_timer2
-.PHONY : main_timer2
-
-# fast build rule for target.
-main_timer2/fast:
-	$(MAKE) -f CMakeFiles/main_timer2.dir/build.make CMakeFiles/main_timer2.dir/build
-.PHONY : main_timer2/fast
-
-#=============================================================================
-# Target rules for targets named MoveTimer
-
-# Build rule for target.
-MoveTimer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MoveTimer
-.PHONY : MoveTimer
-
-# fast build rule for target.
-MoveTimer/fast:
-	$(MAKE) -f CMakeFiles/MoveTimer.dir/build.make CMakeFiles/MoveTimer.dir/build
-.PHONY : MoveTimer/fast
-
-#=============================================================================
 # Target rules for targets named MoveCounter
 
 # Build rule for target.
@@ -148,6 +122,19 @@ MoveCounter: cmake_check_build_system
 MoveCounter/fast:
 	$(MAKE) -f CMakeFiles/MoveCounter.dir/build.make CMakeFiles/MoveCounter.dir/build
 .PHONY : MoveCounter/fast
+
+#=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 MoveCounter.o: MoveCounter.cpp.o
 
@@ -176,59 +163,32 @@ MoveCounter.cpp.s:
 	$(MAKE) -f CMakeFiles/MoveCounter.dir/build.make CMakeFiles/MoveCounter.dir/MoveCounter.cpp.s
 .PHONY : MoveCounter.cpp.s
 
-MoveTimer2.o: MoveTimer2.cpp.o
+main.o: main.cpp.o
 
-.PHONY : MoveTimer2.o
-
-# target to build an object file
-MoveTimer2.cpp.o:
-	$(MAKE) -f CMakeFiles/MoveTimer.dir/build.make CMakeFiles/MoveTimer.dir/MoveTimer2.cpp.o
-.PHONY : MoveTimer2.cpp.o
-
-MoveTimer2.i: MoveTimer2.cpp.i
-
-.PHONY : MoveTimer2.i
-
-# target to preprocess a source file
-MoveTimer2.cpp.i:
-	$(MAKE) -f CMakeFiles/MoveTimer.dir/build.make CMakeFiles/MoveTimer.dir/MoveTimer2.cpp.i
-.PHONY : MoveTimer2.cpp.i
-
-MoveTimer2.s: MoveTimer2.cpp.s
-
-.PHONY : MoveTimer2.s
-
-# target to generate assembly for a file
-MoveTimer2.cpp.s:
-	$(MAKE) -f CMakeFiles/MoveTimer.dir/build.make CMakeFiles/MoveTimer.dir/MoveTimer2.cpp.s
-.PHONY : MoveTimer2.cpp.s
-
-main_timer2.o: main_timer2.cpp.o
-
-.PHONY : main_timer2.o
+.PHONY : main.o
 
 # target to build an object file
-main_timer2.cpp.o:
-	$(MAKE) -f CMakeFiles/main_timer2.dir/build.make CMakeFiles/main_timer2.dir/main_timer2.cpp.o
-.PHONY : main_timer2.cpp.o
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-main_timer2.i: main_timer2.cpp.i
+main.i: main.cpp.i
 
-.PHONY : main_timer2.i
+.PHONY : main.i
 
 # target to preprocess a source file
-main_timer2.cpp.i:
-	$(MAKE) -f CMakeFiles/main_timer2.dir/build.make CMakeFiles/main_timer2.dir/main_timer2.cpp.i
-.PHONY : main_timer2.cpp.i
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-main_timer2.s: main_timer2.cpp.s
+main.s: main.cpp.s
 
-.PHONY : main_timer2.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-main_timer2.cpp.s:
-	$(MAKE) -f CMakeFiles/main_timer2.dir/build.make CMakeFiles/main_timer2.dir/main_timer2.cpp.s
-.PHONY : main_timer2.cpp.s
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -237,19 +197,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... main_timer2"
-	@echo "... MoveTimer"
 	@echo "... edit_cache"
 	@echo "... MoveCounter"
+	@echo "... main"
 	@echo "... MoveCounter.o"
 	@echo "... MoveCounter.i"
 	@echo "... MoveCounter.s"
-	@echo "... MoveTimer2.o"
-	@echo "... MoveTimer2.i"
-	@echo "... MoveTimer2.s"
-	@echo "... main_timer2.o"
-	@echo "... main_timer2.i"
-	@echo "... main_timer2.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

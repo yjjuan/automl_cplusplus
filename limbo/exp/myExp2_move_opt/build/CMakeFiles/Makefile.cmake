@@ -17,10 +17,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/lib/cmake/nlopt/NLoptConfigVersion.cmake"
   "/usr/local/lib/cmake/nlopt/NLoptLibraryDepends-release.cmake"
   "/usr/local/lib/cmake/nlopt/NLoptLibraryDepends.cmake"
-  "/usr/local/lib/cmake/opencv4/OpenCVConfig-version.cmake"
-  "/usr/local/lib/cmake/opencv4/OpenCVConfig.cmake"
-  "/usr/local/lib/cmake/opencv4/OpenCVModules-release.cmake"
-  "/usr/local/lib/cmake/opencv4/OpenCVModules.cmake"
   "/usr/local/share/cmake-3.13/Modules/CMakeCCompiler.cmake.in"
   "/usr/local/share/cmake-3.13/Modules/CMakeCCompilerABI.c"
   "/usr/local/share/cmake-3.13/Modules/CMakeCInformation.cmake"
@@ -97,8 +93,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/share/cmake-3.13/Modules/Compiler/zOS-C-DetermineCompiler.cmake"
   "/usr/local/share/cmake-3.13/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake"
   "/usr/local/share/cmake-3.13/Modules/FindBoost.cmake"
-  "/usr/local/share/cmake-3.13/Modules/FindPackageHandleStandardArgs.cmake"
-  "/usr/local/share/cmake-3.13/Modules/FindPackageMessage.cmake"
   "/usr/local/share/cmake-3.13/Modules/Internal/FeatureTesting.cmake"
   "/usr/local/share/cmake-3.13/Modules/Platform/Linux-Determine-CXX.cmake"
   "/usr/local/share/cmake-3.13/Modules/Platform/Linux-GNU-C.cmake"
@@ -126,7 +120,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/main_timer2.dir/DependInfo.cmake"
-  "CMakeFiles/MoveTimer.dir/DependInfo.cmake"
   "CMakeFiles/MoveCounter.dir/DependInfo.cmake"
+  "CMakeFiles/main.dir/DependInfo.cmake"
   )
