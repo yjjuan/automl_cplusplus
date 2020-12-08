@@ -113,7 +113,7 @@ int main(int argc, char **argv)
         status = mc.update(calculateMean(memoryWindow));
 
     };
-    std::cout << "# of move detect = " << mc.cyclesCount << std::endl;
+    std::cout << "# of peaks detect = " << mc.cyclesCount << std::endl;
 
    return 0;
 }

@@ -101,7 +101,7 @@ double countLoss(MoveCounter& mc, double groundTruth)
 
 
     };
-    std::cout << "# of move detect = " << mc.cyclesCount << std::endl;
+    std::cout << "# of peaks detect = " << mc.cyclesCount << std::endl;
     loss = std::abs(mc.cyclesCount - groundTruth);
     return loss;
 }
