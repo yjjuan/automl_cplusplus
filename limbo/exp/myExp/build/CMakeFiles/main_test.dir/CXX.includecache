@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kevin-core/Desktop/ubuntu_one/automl_cplusplus/limbo/exp/myExp/MoveCounter.hpp
+numeric
+-
+cmath
+-
+algorithm
+-
+vector
+-
+
+/home/kevin-core/Desktop/ubuntu_one/automl_cplusplus/limbo/exp/myExp/main_test.cpp
+iostream
+-
+cmath
+-
+MoveCounter.hpp
+/home/kevin-core/Desktop/ubuntu_one/automl_cplusplus/limbo/exp/myExp/MoveCounter.hpp
+fstream
+/home/kevin-core/Desktop/ubuntu_one/automl_cplusplus/limbo/exp/myExp/fstream
+sstream
+/home/kevin-core/Desktop/ubuntu_one/automl_cplusplus/limbo/exp/myExp/sstream
+string
+-
+

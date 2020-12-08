@@ -156,7 +156,7 @@ struct Eval {
         std::cout << "====================================" << std::endl;
         
         MoveCounter mc(1 + static_cast<int>(120*x(2)), 5*x(0), x(1), 30);
-        std::cout << "lag = " << 1 + static_cast<int>(120)<< "; threshold = " << 5*x(0) << "; influence = " << x(1)<< std::endl;
+        std::cout << "lag = " << 1 + static_cast<int>(120*x(2))<< "; threshold = " << 5*x(0) << "; influence = " << x(1)<< std::endl;
 
         //MoveTimer mt(1 + static_cast<int>(120*x(2)), 10*x(0), x(1), 30);
         //std::cout << "lag = " << 1 + static_cast<int>(120*x(2))<< "; threshold = " << 10*x(0) << "; influence = " << x(1)<< std::endl;
@@ -176,5 +176,7 @@ int main()
     boptimizer.optimize(Eval());
     // the best sample found
     std::cout << "Best sample: " << boptimizer.best_sample()(0) << " - Best observation: " << boptimizer.best_observation()(0) << std::endl;
+    
+    // write the found paramter into txt file
     return 0;
 }

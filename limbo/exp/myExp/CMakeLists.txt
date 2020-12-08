@@ -33,3 +33,7 @@ target_link_libraries(main MoveCounter)
 
 target_link_libraries(main "nlopt")
 target_link_libraries(main m)
+
+ADD_EXECUTABLE(main_test  main_test.cpp )
+target_link_libraries( main_test Boost::filesystem Boost::system)
+target_link_libraries(main_test MoveCounter)

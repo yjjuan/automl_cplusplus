@@ -1,6 +1,8 @@
 #git clone nlpot, limbo
-cd 
-mkdir 
+
+conda deactivate
+cd limbo/exp/myExp
+mkdir build
 
 cd build
 cmake ..
