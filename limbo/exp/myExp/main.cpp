@@ -65,6 +65,16 @@ std::vector<data> LoadData(string fileName) {
     return X;
 }
 
+void writeFile(string fileName, std::vector<float>& params) {
+
+   ofstream outfile;
+   outfile.open(fileName);
+  
+   outfile << params[0] << "," << params[1] << "," << params[2];
+ 
+   outfile.close();
+
+}
 
 double countLoss(MoveCounter& mc, double groundTruth)
 {
@@ -155,8 +165,8 @@ struct Eval {
     {
         std::cout << "====================================" << std::endl;
         
-        MoveCounter mc(1 + static_cast<int>(120*x(2)), 5*x(0), x(1), 30);
-        std::cout << "lag = " << 1 + static_cast<int>(120*x(2))<< "; threshold = " << 5*x(0) << "; influence = " << x(1)<< std::endl;
+        MoveCounter mc(1 + static_cast<int>(120*x(0)), 5*x(1), x(2), 30);
+        std::cout << "lag = " << 1 + static_cast<int>(120*x(0))<< "; threshold = " << 5*x(1) << "; influence = " << x(2)<< std::endl;
 
         //MoveTimer mt(1 + static_cast<int>(120*x(2)), 10*x(0), x(1), 30);
         //std::cout << "lag = " << 1 + static_cast<int>(120*x(2))<< "; threshold = " << 10*x(0) << "; influence = " << x(1)<< std::endl;
@@ -175,8 +185,14 @@ int main()
     // run the evaluation
     boptimizer.optimize(Eval());
     // the best sample found
-    std::cout << "Best sample: " << boptimizer.best_sample()(0) << " - Best observation: " << boptimizer.best_observation()(0) << std::endl;
+    //std::cout << "Best sample: " << boptimizer.best_sample()(0) << " - Best observation: " << boptimizer.best_observation()(0) << std::endl;
+    std::vector<float> results;
+
+    results.push_back(1 + static_cast<int>(120*boptimizer.best_sample()(0)));
+    results.push_back(5*boptimizer.best_sample()(1));
+    results.push_back(boptimizer.best_sample()(2));
     
     // write the found paramter into txt file
+    writeFile("../found_params.txt", results);
     return 0;
 }
