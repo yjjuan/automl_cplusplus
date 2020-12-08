@@ -11,6 +11,5 @@ Code to generate analysis and figure could be found in this [notebook](./workflo
  
 
 ## Reference
-1. [LIMBO: bayesian optimization in C++]()
-2. [NLOPT library]()
-3. 
+1. [limbo: lightweight bayesian optimization in C++](https://github.com/resibots/limbo)
+2. [NLopt library](https://github.com/stevengj/nlopt)
